@@ -1,0 +1,34 @@
+/* miniprogram/pages/home/home.wxss */
+/* .swiper-container{
+  position: relative
+} */
+/* @import 'icon/icon.wxss'; */
+.swiper-container .swiper{
+  height: 150px
+}
+.swiper-container .swiper .img{
+  width: 100%;
+  height: 100%;
+}
+.van-button--info{
+  margin:20px 0 10px 0
+}
+
+.iconclass{
+  color: #1989fa
+}
+.textclass{
+   color:#1989fa
+}
+.block-container{
+  display: flex;
+  width: 100%;
+  height: 84px;
+  justify-content: flex-start;
+}
+.inner-block{
+  height: 100%;
+  width: 20%;
+  background-color:#fff;
+  margin-left: 4%
+}

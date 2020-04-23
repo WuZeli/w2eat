@@ -1,0 +1,66 @@
+<!--miniprogram/pages/asset/asset.wxml-->
+<scroll-view scroll-y="true" class="scroll-container">
+  <van-toast id="van-toast" />
+  <view wx:if="{{condition}}" class="nullarea">
+    <image src="../../images/null.png"></image>
+    <text>空空如也</text>
+  </view>
+  <view wx:if="{{!condition}}"     class="scroll-y">
+    <view wx:for="{{assetList}}"  wx:key="id" class="assets-container">
+    <view class="asset-container">
+    <view class="asset-header">
+      <van-row custom-class="van-row">
+        <van-col span="10" offset="4">{{item.username}}</van-col>
+        <van-col span="7" offset="1" class="time-text">{{item.time}}</van-col>
+      </van-row>
+      <van-row custom-class="van-row">
+        <van-col span="10" offset="3">
+          <van-rate value="{{item.value}}" size="14"  readonly allow-half />
+        </van-col>
+      </van-row>
+      <view  class="image-container">
+        <van-image
+            round
+            width="90rpx"
+            height="90rpx"
+            src="{{item.imgurl}}"
+          />
+      </view>
+      </view>
+      <view class="content-container">
+           <van-cell size="large" label="{{item.content}}" label-class="van-cell" />
+      </view>
+       </view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="footer">
+<view class="icon-container" hover-class="icon-container-hover" bindtap="onClick" >
+   <van-icon  name="plus"  color="#fff"  size="60rpx"/>
+</view>
+</view>
+
+<van-action-sheet 
+   show="{{ show }}" 
+   title="发表评论"
+   bind:close="onClose"
+   overlay
+   close-on-click-overlay
+  >
+  <view>
+     <van-rate  custom-class="van-rate"  bind:change="rateChange"     value="{{inputRate}}" size="18"  allow-half />
+     <van-cell-group>
+      <van-field
+        value="{{ inputContent }}"
+        placeholder="请输入评论内容"
+        border="false"
+        bind:change="contentChange"
+        type="textarea"
+        autosize
+        input-class="van-textarea"
+      />
+    </van-cell-group>
+    <van-button  bind:click="addasset"    type="info" block>提交</van-button>
+  </view>
+</van-action-sheet>

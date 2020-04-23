@@ -1,0 +1,27 @@
+<!--pages/index/index.wxml-->
+<view style="height:100%">
+   <!-- 展示主题 -->
+   <view style='width:100%;margin:0 auto;text-align:center;font-size:34rpx;margin-bottom:10rpx;'>{{awardsConfig.option||'吃什么鸭'}}</view>
+   <!-- {{awardsConfig.option}} -->
+   <!-- 展示结果 -->
+   <view style='width:100%;margin:0 auto;text-align:center;margin-bottom:44rpx;color:#1078e7;font-size:30rpx'>{{s_awards}}</view>
+   
+   <!-- myAwards就是当被子组件触发时的函数 size:转盘大小 -->
+   <zhuanpan id='zhuanpan' 
+   bind:myData='getData' 
+   bind:myAwards="getAwards" 
+   bind:startZhuan="startZhuan" 
+   size='{{size}}' 
+   zhuanpanArr='{{xiaojuedingArr}}' 
+   awardsConfig='{{awardsConfig}}'>
+   </zhuanpan>
+
+   <view class='juedinoption' wx:for='{{xiaojuedingArr}}' wx:key='key' bindtap='xiaojueding' data-idx='{{index}}'>{{item.option}}</view> 
+</view>
+
+<!-- listHistory为0时-->
+ <!-- <view wx:if="{{!condition}}" class="nullarea">
+    <image src="../../images/zhuanpan.png"></image>
+    <text>快去吃饭吧~</text>
+  </view> -->
+

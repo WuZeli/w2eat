@@ -1,0 +1,78 @@
+/* miniprogram/pages/asset/asset.wxss */
+page{
+height: 100%;
+background-color: #fff
+}
+.nullarea{
+   box-sizing: border-box;
+   padding: 200px 150px;
+}
+.nullarea image{
+  width: 150rpx;
+  height: 150rpx;
+}
+.nullarea text{
+  display: block;
+  width: 150rpx;
+  text-align: center;
+  color: #707070
+}
+
+
+.scroll-container{
+  height:94%
+}
+.scroll-y {
+  display: flex;
+  flex-direction: column; 
+}
+.asset-container{
+  width: 100%;
+  margin:20rpx 0 0 0;
+  border-bottom:1px solid  #f6f6f6
+}
+.asset-header{
+  position: relative;
+
+}
+.content-container{
+  width: 100%;
+}
+
+.image-container{
+  position: absolute;
+  left: 20rpx;
+  top:2rpx;
+  z-index: 99
+}
+.time-text{
+  color:red
+}
+.van-cell{
+  color:#000
+}
+/* 设置黑色无效 */
+.footer{
+  display: flex;
+  justify-content: center;
+}
+.icon-container{
+  background-color: blue;
+  width: 65rpx;
+  height: 65rpx;
+  border-radius: 50%
+}
+.icon-container-hover{
+  background-color: green;
+}
+.van-rate{
+  margin-left:15px
+}
+.van-textarea{
+  height: 150px !important;
+  font-size:18px
+}
+.time-text{
+  color: #000;
+  text-align: right
+}

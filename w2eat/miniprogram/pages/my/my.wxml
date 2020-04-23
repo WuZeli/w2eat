@@ -1,0 +1,90 @@
+<!--miniprogram/pages/my/my.wxml-->
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />
+<view>
+  <view class="header">
+    <van-image round width="200rpx" height="200rpx" src="{{userInfo.avatarUrl}}" />
+    <text class="nickname-text">{{userInfo.nickName}}</text>
+  </view>
+  <van-collapse custom-class="navbar" value="{{ activeNames }}" bind:change="onChange">
+    <!-- 历史转盘 -->
+    <van-collapse-item title="历史转盘" name="1">
+    <text wx:if="{{listHistory.length==0}}">暂无历史转盘</text>
+  <block >
+      <scroll-view scroll-y="true" class="scroll-container">
+        <view class="scroll-y">
+          <block  wx:for="{{listHistory}}" wx:key="id"  value="" bind:change=""    wx:for-item="list">
+          <van-collapse-item title="{{list.str}}" custom-class="second-collapse-item">
+              <block wx:for="{{list.awards}}" wx:key="index" wx:for-item="award">
+                  <van-cell title="{{award.coursename}}"  title-class="{{award.coursename==list.s_awards?'chose':''}}" />
+              </block>
+                  <van-button bind:click="turnToChoose" data-item="{{list}}"   type="info" block>选择</van-button>
+          </van-collapse-item>
+      
+            </block>
+        </view>
+      </scroll-view>
+    </block>
+    </van-collapse-item>
+    <!-- 我的评论 -->
+
+    <van-collapse-item title="我的评论" name="2">
+    <text wx:if="{{myassetList.length==0}}">暂无历史评论</text>
+    <block>
+      <scroll-view scroll-y="true" class="scroll-container">
+        <view class="scroll-y">
+          <view wx:for="{{myassetList}}" wx:key="id" class="assets-container">
+            <!-- 单条评论 -->
+            <van-swipe-cell bind:close="onClose" id="swipe-cell" async-close right-width="{{65}}">
+              <van-cell-group>
+                <!-- <van-cell title="单元格" value="内容" /> -->
+                <!-- slot -->
+                <van-row custom-class="van-row">
+                  <van-col span="10">
+                    <van-rate value="{{item.value}}" size="14" readonly allow-half />
+                  </van-col>
+                  <van-col span="6" offset="8" class="time-text">{{item.time}}</van-col>
+                </van-row>
+                <van-cell custom-class="cell-custom" size="large" label="{{item.content}}" label-class="cell-label" />
+              </van-cell-group>
+              <view slot="right" class="right-cell" bindtap="get_id" data-id="{{item._id}}">
+                <text class="delete-text">删除</text>
+              </view>
+            </van-swipe-cell>
+            <!-- 单条评论 -->
+          </view>
+        </view>
+      </scroll-view>
+      </block>
+    </van-collapse-item>
+    <!-- 口味分析 -->
+    <van-collapse-item title="口味分析" name="3">
+  
+    </van-collapse-item>
+  </van-collapse>
+
+
+
+
+</view>
+
+
+<!-- <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
+    <view class="" slot="left">
+        <van-rate value="{{item.value}}" size="14"  readonly allow-half />
+        <van-cell size="large" label="{{item.content}}" label-class="van-cell" />
+    </view>
+      <view  slot="right">
+         <text>{{item.time}}</text>
+      </view>
+      </van-swipe-cell> -->
+
+<!-- <van-collapse wx:for="{{listHistory}}" accordion value="" bind:change="">
+            <van-collapse-item title="{{item.sortidArr}}">
+                aaaasa
+              <!-- <van-cell-group wx:for="{{item.awards}}" wx:key="index" wx:for-item="award">
+                <van-cell title="{{award.coursename}}" />
+              </van-cell-group> -->
+<!-- </van-collapse-item>
+
+</van-collapse>  -->

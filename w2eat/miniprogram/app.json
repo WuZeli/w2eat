@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/choose/choose",
+    "pages/asset/asset",
+    "pages/my/my"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "w2eat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color":"#8a8a8a",
+    "selectedColor":"#267fd7",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "pages/image/home1.png",
+        "selectedIconPath":"pages/image/home2.png"
+      },
+      {
+      "pagePath":"pages/choose/choose",
+        "text": "转盘",
+        "iconPath": "pages/image/zhuanpan1.png",
+        "selectedIconPath": "pages/image/zhuanpan2.png"
+      },
+      {
+        "pagePath":"pages/asset/asset",
+        "text":"评论",
+        "iconPath": "pages/image/asset1.png",
+        "selectedIconPath": "pages/image/asset2.png"
+      },
+      {
+        "pagePath":"pages/my/my",
+        "text":"我的",
+        "iconPath": "pages/image/my1.png",
+        "selectedIconPath": "pages/image/my2.png"
+      }
+      ]
+    }
+}

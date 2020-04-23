@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <van-image  width="128rpx" height="128rpx" round src="{{userInfo.avatarUrl}}"></van-image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <van-button type="info"  bind:click="conole.log(" class="login-button" bind:click="toHome">点击确认登陆</van-button>
+    </block>
+  </view>
+</view>

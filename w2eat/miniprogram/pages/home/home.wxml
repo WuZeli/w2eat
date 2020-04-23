@@ -1,0 +1,58 @@
+<!--miniprogram/pages/home/home.wxml-->
+<!-- 引入.wxs文件 src为相对路径，module指定当前模块的名称 -->
+<wxs module="fn" src="./home.wxs"></wxs>
+<view>
+  <van-toast id="van-toast" />
+  <view class="swiper-container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{duration}}" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+      <block wx:for="{{imgUrls}}" wx:key="unique">
+        <swiper-item> 
+          <image src="{{item}}" class="img" bindtap="swiperClick"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <van-notice-bar
+    text="{{text}}"
+    left-icon="smile-o"
+    color="#fff"
+    backgroundColor="#1989fa"
+  />
+  <view wx:for="{{constList}}" wx:key="id">
+  <van-divider contentPosition="center">{{item.text}}</van-divider>
+     <van-grid gutter="{{10}}" >
+    <!--  <van-grid-item use-slot wx:for="{{item.children}}" wx:key="index" wx:for-item="children" data-sortid = "{{children.sortid}}" >
+        <text>{{children.name}}</text>
+        <van-checkbox value="{{checked}}" bind:change="" >{{children.name}}</van-checkbox>
+      </van-grid-item> -->
+   <van-grid-item 
+    wx:for="{{item.children}}" 
+    wx:if="{{item}}"
+    wx:key="index"
+    wx:for-item="children" 
+    icon="{{children.icon}}"  
+    text="{{children.name}}"
+    bind:click = "gridItemClick"
+    data-sortid = "{{children.sortid}}"
+   /> 
+   <!--   content-class = "iconclass"
+    text-class = "iconclass"   -->
+   <!-- text-class不生效 -->
+</van-grid> 
+  </view>
+  <van-button type="info" size="large" icon="search" bind:click="searchcourse">搜索</van-button>
+</view>
+
+
+<!-- <view class="block-container">
+    <view class="inner-block"  
+    wx:for="{{item.children}}" 
+    wx:key="index"
+    wx:for-item = "children"
+    bind:click = "gridItemClick"
+    data-sortid = "{{children.sortid}}"
+    >
+    {{children.name}}
+    <icon class="iconfont icon-jianfei" />
+    </view>
+  </view> -->

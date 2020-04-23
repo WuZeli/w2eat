@@ -1,0 +1,18 @@
+{
+  "usingComponents": {
+    "van-card": "@vant/weapp/card/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-panel": "@vant/weapp/panel/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-rate": "@vant/weapp/rate/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-toast": "@vant/weapp/toast/index"
+  }
+}

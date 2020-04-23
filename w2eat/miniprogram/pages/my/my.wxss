@@ -1,0 +1,63 @@
+/* miniprogram/pages/my/my.wxss */
+page{
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+}
+.header,.navbar{
+  width: auto;
+  border-radius: 5px;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 0 20px #cababa;
+}
+.nickname-text{
+  /* background: red; */
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  left: 250rpx;
+  top:80rpx;
+}
+.navbar{
+  margin-top: 20px;
+}
+
+
+.scroll-container{
+  max-height: 500rpx;
+}
+.scroll-y {
+  display: flex;
+  flex-direction: column;
+}
+.right-cell{
+  height: 100%;
+  width: 64px;
+  font-size: 16px;
+  background-color: #ee0a24;
+  text-align: center;
+  font-weight: 400;
+  color: #fff
+}
+.delete-text{
+  display: block;
+  position: absolute;
+  height:20px;
+  width: 100%;
+  margin: auto;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right:0 
+}
+
+.cell-label{
+  margin-left: -10px
+}
+.second-collapse-item .van-cell{
+
+}
+.chose{  /*历史选中*/
+  font-weight: 500;
+  color: green
+}

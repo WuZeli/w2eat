@@ -1,0 +1,12 @@
+var fn = {
+  icongreen: function (sortid,sortidArr) {
+    if (sortidArr.indexOf(sortid)!==-1) return true
+    else return false
+  }
+}
+// 导出对外暴露的属性
+module.exports = {
+  icongreen: fn.icongreen
+}
+
+
